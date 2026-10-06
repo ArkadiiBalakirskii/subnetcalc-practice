@@ -20,6 +20,9 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("cidr")
     sp.add_argument("--prefix", type=int, required=True)
 
+    overlaps = sub.add_parser("overlaps", help="check for overlapping CIDRs")
+    overlaps.add_argument("cidrs", nargs="+")
+
     args = parser.parse_args(argv)
     try:
         if args.command == "info":
@@ -29,6 +32,9 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "split":
             for subnet in core.split(args.cidr, args.prefix):
                 print(subnet)
+        elif args.command == "overlaps":
+            for a, b in core.overlaps(args.cidrs):
+                print(f"{a} overlaps {b}")
     except ValueError as err:
         print(f"error: {err}", file=sys.stderr)
         return 2
