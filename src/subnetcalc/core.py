@@ -37,8 +37,12 @@ def split(cidr: str, new_prefix: int) -> list[str]:
 
 
 def overlaps(cidrs: list[str]) -> list[tuple[str, str]]:
-    """Return every pair of CIDR blocks that overlap.
-
-    TODO: implement (practice task 4 — give this to Copilot as a GitHub issue).
-    """
-    raise NotImplementedError
+    """Return sorted pairs of CIDR blocks that overlap."""
+    networks = [parse_cidr(cidr) for cidr in cidrs]
+    pairs = [
+        tuple(sorted((cidrs[i], cidrs[j])))
+        for i in range(len(cidrs))
+        for j in range(i + 1, len(cidrs))
+        if networks[i].overlaps(networks[j])
+    ]
+    return sorted(pairs)
