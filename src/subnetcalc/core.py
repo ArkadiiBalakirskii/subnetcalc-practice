@@ -23,8 +23,7 @@ def total_ips(cidr: str) -> int:
 
 def aws_usable_ips(cidr: str) -> int:
     """Addresses you can actually use in an AWS subnet."""
-    # NOTE: practice bug lives here on purpose — see PRACTICE_GUIDE.md, task 3.
-    return max(total_ips(cidr) - 4, 0)
+    return max(total_ips(cidr) - AWS_RESERVED_IPS, 0)
 
 
 def split(cidr: str, new_prefix: int) -> list[str]:

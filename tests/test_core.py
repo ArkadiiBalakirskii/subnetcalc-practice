@@ -3,9 +3,8 @@ import pytest
 from subnetcalc import core
 
 
-def test_total_ips_for_slash_24():
-    assert core.total_ips("10.0.0.0/24") == 256
-
+def test_aws_usable_ips_for_slash_24_returns_251():
+    assert core.aws_usable_ips("10.0.0.0/24") == 251
 
 def test_split_slash_20_into_slash_22():
     assert core.split("10.10.0.0/20", 22) == [
