@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: subnetcalc
+Version: 0.1.0
+Summary: Tiny AWS subnet calculator for GitHub + AI tools practice
+Requires-Python: >=3.10
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: ruff>=0.5; extra == "dev"
