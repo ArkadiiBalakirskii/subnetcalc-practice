@@ -1,0 +1,8 @@
+{
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    { "text": "Use conventional commits: <type>(GH-<issue>): <message>. Take the issue number from the branch name feature/GH-<n>-..." }
+  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    { "text": "Sections: Summary, Issue (Closes #n), Changes, How I tested, Risks." }
+  ]
+}
