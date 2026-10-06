@@ -24,6 +24,9 @@ def main(argv: list[str] | None = None) -> int:
     overlaps.add_argument("cidrs", nargs="+")
 
     args = parser.parse_args(argv)
+    if args.command == "overlaps" and len(args.cidrs) < 2:
+        parser.error("the overlaps command requires at least two CIDR blocks")
+
     try:
         if args.command == "info":
             print(f"CIDR:        {core.parse_cidr(args.cidr)}")
@@ -33,8 +36,12 @@ def main(argv: list[str] | None = None) -> int:
             for subnet in core.split(args.cidr, args.prefix):
                 print(subnet)
         elif args.command == "overlaps":
-            for a, b in core.overlaps(args.cidrs):
-                print(f"{a} overlaps {b}")
+            pairs = core.overlaps(args.cidrs)
+            if pairs:
+                for a, b in pairs:
+                    print(f"{a} overlaps with {b}")
+            else:
+                print("No overlaps found")
     except ValueError as err:
         print(f"error: {err}", file=sys.stderr)
         return 2
