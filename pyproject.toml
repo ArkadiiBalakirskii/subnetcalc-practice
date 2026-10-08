@@ -1,6 +1,6 @@
 [project]
 name = "subnetcalc"
-version = "0.2.0"
+version = "0.2.1"
 description = "Tiny AWS subnet calculator for GitHub + AI tools practice"
 requires-python = ">=3.10"
 
