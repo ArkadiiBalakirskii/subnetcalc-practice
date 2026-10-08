@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: subnetcalc
-Version: 0.2.0
+Version: 0.2.1
 Summary: Tiny AWS subnet calculator for GitHub + AI tools practice
 Requires-Python: >=3.10
 Provides-Extra: dev
