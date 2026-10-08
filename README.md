@@ -1,6 +1,6 @@
 # subnetcalc
 
-Tiny subnet calculator (offline, no AWS account needed — it only does math with Python's `ipaddress`). **Practice project** for Git Flow, GitHub and AI tools (GitHub Copilot).
+Tiny new subnet calculator (offline, no AWS account needed — it only does math with Python's `ipaddress`). **Practice project** for Git Flow, GitHub and AI tools (GitHub Copilot, Claude).
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
