@@ -1,17 +1,10 @@
 # Changelog
 
 ## Unreleased
-
-### Features
-
-- **GH-3:** Add the `overlaps` CLI command for checking multiple CIDR blocks.
+- **GH-3:** Add the `overlaps` CLI command.
 
 ## 0.2.1
-
-### Other
-
-- Update CI branch triggers to use `master`.
-- Ignore Python caches, virtual environments, and build artifacts.
+- **GH-8:** Run CI on master, restore .gitignore, cleanup.
 
 ## 0.2.0
 
